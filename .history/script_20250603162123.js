@@ -44,7 +44,7 @@ function deleteLast(){
 
     // if theres only 1 character or its 0, reset to 0
     if(currentValue.length <=1 || currentValue === '0') {
-        display.value = currentValue.slice(0, -1);
+        display.value = currentValue
     }
 
     alert('Backspace button was clicked');

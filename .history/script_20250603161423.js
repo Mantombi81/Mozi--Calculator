@@ -28,7 +28,9 @@ function appendToDisplay(value){
 
     // reset the justCalculated flag when user starts typing
     justCalculated = false;
-    console.log('Display updated to: ', display.value);
+    console.lo
+
+   
 }
 
 function clearDisplay(){
@@ -39,13 +41,6 @@ function clearDisplay(){
 
 function deleteLast(){
     console.log('Backspace button pressed.');
-
-    let currentValue = display.value;
-
-    // if theres only 1 character or its 0, reset to 0
-    if(currentValue.length <=1 || currentValue === '0') {
-        display.value = currentValue.slice(0, -1);
-    }
 
     alert('Backspace button was clicked');
 
