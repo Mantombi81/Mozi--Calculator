@@ -31,15 +31,8 @@ function calculate(){
 }
 
 // set up event listeners
-document.addEventListener('DOMContentLoaded', function(){
-    console.log('Calculator loaded successfully');
-    console.log('Display element', display);
 
-    if (display) {
-        console.log('Current display value: ', display.value);
-    } else {
-        console.log('Display element not found');
-    }
-})
+document.addEventListener('')
+
 
 

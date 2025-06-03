@@ -24,22 +24,13 @@ function deleteLast(){
 
 }
 
-function calculate(){
+function deleteLast(){
     console.log('Equals button pressed.');
 
     alert('Equals button was clicked');
 }
 
-// set up event listeners
-document.addEventListener('DOMContentLoaded', function(){
-    console.log('Calculator loaded successfully');
-    console.log('Display element', display);
+document
 
-    if (display) {
-        console.log('Current display value: ', display.value);
-    } else {
-        console.log('Display element not found');
-    }
-})
 
 
