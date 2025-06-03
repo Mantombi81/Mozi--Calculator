@@ -59,6 +59,8 @@ function deleteLast(){
         display.value = currentValue.slice(0, -1);
     }
 
+   
+
 }
 
 function calculate(){

@@ -16,23 +16,27 @@ function appendToDisplay(value){
         return;
     }
 
-    if (currentValue === "0" && !isNaN(value)) {
+    // if current display show 0 and user enters a number, we want to replace the 0
+    if (currentValue == "0" && !isNaN(value)) {
         display.value = value;
+        // If current display shows 0 and the user enters a decimal,  keep the 0
     } else if (currentValue === '0' && value === '.') {
         display.value = currentValue + value;
     } else if (value === '.') {
-        // Get the last number in the display
-        let lastNumber = currentValue.split(/[+\-*/]/).pop();
-        // Only add the decimal if the current number doesn't have it
-        if (!lastNumber.includes('.')) {
-            display.value = currentValue + value;
-        }
+        // get the last number in the display
+        let lastNumber = currentValue.split('/[+\-*/]').pop();
+        // only add the decimal if the current number does'nt have
+        if (!lastNumber.includes('.')) }
+        display.value = currentValue + value;
+
+        
     } else {
         display.value = currentValue + value;
     }
 
+    // reset the justCalculated flag when user starts typing
     justCalculated = false;
-    console.log('Display updated to:', display.value);
+    console.log('Display updated to: ', display.value);
 }
 
 function clearDisplay(){
@@ -42,9 +46,7 @@ function clearDisplay(){
     justCalculated = false;
 
     display.style.backgroundColor= '#f0f0f0';
-    setTimeout(() =>{
-        display.style.backgroundColor = '';
-    }, 150);
+    setTimeout(())
 
     
 }
@@ -59,39 +61,15 @@ function deleteLast(){
         display.value = currentValue.slice(0, -1);
     }
 
+    alert('Backspace button was clicked');
+
 }
 
 function calculate(){
     console.log('Equals button pressed.');
-   
+
+    alert('Equals button was clicked');
 }
-
-document.addEventListener('keydown', function(event) {
-    console.log('key pressed', event.key)
-
-    if (event.key >= '0' && event.key <= '9') {
-        appendToDisplay(event.key);
-    } else if (event.key === '.') {
-        appendToDisplay('.');
-    } else if (event.key === '+') {
-        appendToDisplay('+');
-    } else if (event.key === '-') {
-        appendToDisplay('-');
-    } else if (event.key === '*') {
-        appendToDisplay('*');
-    } else if (event.key === '/') {
-        event.preventDefault();
-        appendToDisplay('/');
-    }
-
-    else if (event.key === 'Enter'  || event.key === '=') {
-        calculate();
-    } else if (event.key === 'Escape' || event.key === 'c'  || event.key === 'C') {
-        clearDisplay();
-    } else if (event.key === 'Backspace') {
-        deleteLast();
-    }
-});
 
 // set up event listeners
 document.addEventListener('DOMContentLoaded', function(){
@@ -103,6 +81,6 @@ document.addEventListener('DOMContentLoaded', function(){
     } else {
         console.log('Display element not found');
     }
-});
+})
 
 

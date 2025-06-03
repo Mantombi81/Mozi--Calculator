@@ -59,6 +59,8 @@ function deleteLast(){
         display.value = currentValue.slice(0, -1);
     }
 
+    alert('Backspace button was clicked');
+
 }
 
 function calculate(){
@@ -84,13 +86,8 @@ document.addEventListener('keydown', function(event) {
         appendToDisplay('/');
     }
 
-    else if (event.key === 'Enter'  || event.key === '=') {
-        calculate();
-    } else if (event.key === 'Escape' || event.key === 'c'  || event.key === 'C') {
-        clearDisplay();
-    } else if (event.key === 'Backspace') {
-        deleteLast();
-    }
+    else if (event.key === 'Enter'  || event.key === '=')
+        
 });
 
 // set up event listeners

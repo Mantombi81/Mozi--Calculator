@@ -16,24 +16,7 @@ function appendToDisplay(value){
         return;
     }
 
-    if (currentValue === "0" && !isNaN(value)) {
-        display.value = value;
-    } else if (currentValue === '0' && value === '.') {
-        display.value = currentValue + value;
-    } else if (value === '.') {
-        // Get the last number in the display
-        let lastNumber = currentValue.split(/[+\-*/]/).pop();
-        // Only add the decimal if the current number doesn't have it
-        if (!lastNumber.includes('.')) {
-            display.value = currentValue + value;
-        }
-    } else {
-        display.value = currentValue + value;
-    }
-
-    justCalculated = false;
-    console.log('Display updated to:', display.value);
-}
+    
 
 function clearDisplay(){
     console.log('Clear button pressed.');
@@ -59,6 +42,8 @@ function deleteLast(){
         display.value = currentValue.slice(0, -1);
     }
 
+    alert('Backspace button was clicked');
+
 }
 
 function calculate(){
@@ -82,14 +67,6 @@ document.addEventListener('keydown', function(event) {
     } else if (event.key === '/') {
         event.preventDefault();
         appendToDisplay('/');
-    }
-
-    else if (event.key === 'Enter'  || event.key === '=') {
-        calculate();
-    } else if (event.key === 'Escape' || event.key === 'c'  || event.key === 'C') {
-        clearDisplay();
-    } else if (event.key === 'Backspace') {
-        deleteLast();
     }
 });
 
