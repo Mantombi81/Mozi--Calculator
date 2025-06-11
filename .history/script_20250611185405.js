@@ -6,7 +6,7 @@ let justCalculated = false;
 function appendToDisplay(value) {
     console.log('Button pressed:', value);
 
-    // 
+    
 
     alert('You pressed: ' + value);
 }

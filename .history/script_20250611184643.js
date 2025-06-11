@@ -6,8 +6,6 @@ let justCalculated = false;
 function appendToDisplay(value) {
     console.log('Button pressed:', value);
 
-    // 
-
     alert('You pressed: ' + value);
 }
 // function to clear our display
@@ -31,9 +29,5 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Calculator loaded successfully');
     console.log('Display element', display);
 
-    if (display) {
-        console.log('Current display value: ', display.value);
-    } else {
-        console.log('Display element not found');
-    }
+    if (display)
 })
